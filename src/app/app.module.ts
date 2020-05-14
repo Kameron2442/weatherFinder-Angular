@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LocItemComponent } from './loc-item/loc-item.component';
+import { MylocsComponent } from './mylocs/mylocs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LocItemComponent
+    LocItemComponent,
+    MylocsComponent
   ],
   imports: [
     BrowserModule,
