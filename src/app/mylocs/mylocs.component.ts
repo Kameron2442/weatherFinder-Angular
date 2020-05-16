@@ -15,27 +15,24 @@ export class MylocsComponent implements OnInit {
   ngOnInit(): void {
 
     this.mylocs = [
-
       {
         id: 0,
-        locName: "nyc",
-        lat: 25,
-        lon: 30
+        locName: "Raleigh NC",
+        lat: 35.7796,
+        lon: 78.6382
       },
       {
         id: 1,
-        locName: "nyc1",
-        lat: 25,
-        lon: 30
+        locName: "New York City",
+        lat: 40.7128,
+        lon: 74.0060
       },
       {
         id: 2,
-        locName: "nyc2",
-        lat: 25,
-        lon: 30
-      }
-
-
+        locName: "Paris France",
+        lat: 46.2276,
+        lon: 2.2137
+      },
     ]
 
 

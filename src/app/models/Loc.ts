@@ -3,4 +3,4 @@ export interface Loc {
     locName: string;
     lat: number;
     lon: number;
-  }
+}
