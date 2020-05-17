@@ -18,20 +18,20 @@ export class MylocsComponent implements OnInit {
       {
         id: 0,
         locName: "Raleigh NC",
-        lat: 35.7796,
-        lon: 78.6382
+        lat: 35.77,
+        lon: -78.63
       },
       {
         id: 1,
         locName: "New York City",
-        lat: 40.7128,
-        lon: 74.0060
+        lat: 40.71,
+        lon: -74.00
       },
       {
         id: 2,
         locName: "Paris France",
-        lat: 46.2276,
-        lon: 2.2137
+        lat: 48.85,
+        lon: 2.35
       },
     ]
 

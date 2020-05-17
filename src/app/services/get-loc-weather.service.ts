@@ -19,8 +19,9 @@ export class GetLocWeatherService {
     const lat_s:string = 'lat=' + lat.toString();
     const lon_s:string = '&lon=' + lon.toString();
 
-    return this.http.get<LocWeather>('https://api.openweathermap.org/data/2.5/onecall?' + lat_s + lon_s + '&exclude=hourly,daily&appid=1233faf42e75a019262a8262817b08ce').pipe(
+    return this.http.get<LocWeather>(this.getWeatherUrl + lat_s + lon_s + this.getWeatherAPIkey).pipe(
       map((json: any) => {
+        console.log(json);
           return <LocWeather> {
             temp: json.current.temp,
             humidity: json.current.humidity,

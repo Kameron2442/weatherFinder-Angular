@@ -1,0 +1,9 @@
+.item-holder{
+    display: inline-block;
+    width: 33.33%;
+}
+
+.neg-margin{
+    margin-left: -10px;
+    margin-right: -10px;
+}
