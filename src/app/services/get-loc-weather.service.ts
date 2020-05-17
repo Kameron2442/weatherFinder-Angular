@@ -22,7 +22,6 @@ export class GetLocWeatherService {
 
     return this.http.get<LocWeather>(this.getWeatherUrl + lat_s + lon_s + this.getWeatherAPIkey).pipe(
       map((json: any) => {
-        console.log(json);
           return <LocWeather> {
             temp: json.current.temp,
             humidity: json.current.humidity,

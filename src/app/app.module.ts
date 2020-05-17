@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LocItemComponent } from './loc-item/loc-item.component';
 import { MylocsComponent } from './mylocs/mylocs.component';
+import { NewLocComponent } from './new-loc/new-loc.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocItemComponent,
-    MylocsComponent
+    MylocsComponent,
+    NewLocComponent
   ],
   imports: [
     BrowserModule,

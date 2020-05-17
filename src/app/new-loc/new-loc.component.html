@@ -1,0 +1,8 @@
+<div class ='border-input'>
+<input type="text" id="loc-input" class = 'tb' placeholder='cary nc' (input)="onSearchChange($event.target.value)">
+</div>
+
+<div class = 's-item' *ngFor = 'let loc of searchedLocs'>
+    <p class = 's-item-title'>{{loc.locName}}</p> 
+    <div class = 's-item-add'>ADD</div>
+</div>
