@@ -1,6 +1,5 @@
 export interface Loc {
-    id: number;
-    locName: string;
-    lat: number;
-    lon: number;
+    locName: string; // location name
+    lat: number; // latitude
+    lon: number; // longitude
 }

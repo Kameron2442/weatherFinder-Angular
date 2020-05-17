@@ -8,27 +8,25 @@ import { Loc } from '../models/Loc';
 })
 export class MylocsComponent implements OnInit {
 
-  mylocs:Loc[];
+  mylocs:Loc[]; //array that holds locations
 
   constructor() { }
 
   ngOnInit(): void {
 
+    // Default locations
     this.mylocs = [
       {
-        id: 0,
         locName: "Raleigh NC",
         lat: 35.77,
         lon: -78.63
       },
       {
-        id: 1,
         locName: "New York City",
         lat: 40.71,
         lon: -74.00
       },
       {
-        id: 2,
         locName: "Paris France",
         lat: 48.85,
         lon: 2.35

@@ -15,6 +15,7 @@ export class GetLocWeatherService {
 
   constructor(private http:HttpClient) { }
 
+  // This function is used by loc-item components to get the weather for themselves
   getWeather(lat:number, lon:number):Observable<LocWeather>{
     const lat_s:string = 'lat=' + lat.toString();
     const lon_s:string = '&lon=' + lon.toString();
