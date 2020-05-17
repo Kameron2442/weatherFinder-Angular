@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Loc } from '../models/Loc';
 import { GetNewLocService } from '../services/get-new-loc.service';
 
@@ -11,6 +11,7 @@ import { GetNewLocService } from '../services/get-new-loc.service';
 export class NewLocComponent implements OnInit {
 
   searchedLocs: Loc[] = [];
+  @Output() addLoc = new EventEmitter<Loc>();
 
   constructor(private newLocService: GetNewLocService) { }
 
@@ -23,6 +24,11 @@ export class NewLocComponent implements OnInit {
       this.searchedLocs = data;
       console.log(data);
     });
+  }
+
+  sendLoc(index: number){
+    this.addLoc.emit(this.searchedLocs[index]);
+    this.searchedLocs = [];
   }
 
 }

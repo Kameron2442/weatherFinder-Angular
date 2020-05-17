@@ -36,4 +36,8 @@ export class MylocsComponent implements OnInit {
 
   }
 
+  receiveLocation($event){
+    this.mylocs.push($event);
+  }
+
 }

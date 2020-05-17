@@ -1,11 +1,11 @@
 <h1>Add Location</h1>
-<app-new-loc></app-new-loc>
+<app-new-loc (addLoc) = 'receiveLocation($event)' ></app-new-loc>
 
 
 <h1>Your saved Locations</h1>
 <div class = 'neg-margin'>
     <div class = 'item-holder' *ngFor="let loc of mylocs">
-        <app-loc-item [loc] = 'loc' ></app-loc-item>
+        <app-loc-item [loc] = 'loc'></app-loc-item>
     </div>
 </div>
 
