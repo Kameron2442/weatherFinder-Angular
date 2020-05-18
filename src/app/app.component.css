@@ -13,6 +13,8 @@
     background-color: white;
     height: 65px;
     margin-bottom: 35px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .nav-title{
@@ -22,6 +24,22 @@
     line-height: 65px;
     color: #3F51B5;
     font-weight: 600;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
 
+}
+
+.about-btn{
+    background-color: #3F51B5;
+    display: block;
+    width: 70px;
+    text-align: center;
+    margin-top: 12px;
+    margin-right: 20px;
+    font-weight: 600;
+    color: white;
+    float: right;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
