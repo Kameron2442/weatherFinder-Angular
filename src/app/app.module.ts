@@ -9,6 +9,7 @@ import { MylocsComponent } from './mylocs/mylocs.component';
 import { NewLocComponent } from './new-loc/new-loc.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
+import { LocQuickViewComponent } from './loc-quick-view/loc-quick-view.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ErrorComponent } from './error/error.component';
     MylocsComponent,
     NewLocComponent,
     AboutComponent,
-    ErrorComponent
+    ErrorComponent,
+    LocQuickViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
-<div class = 'mybackground'  *ngIf="weather">
+<a class = 'mybackground'  *ngIf="weather" [routerLink] = "['/Loc']" [queryParams]="{name: loc.locName, lat: loc.lat, lon: loc.lon}">
     <p class = 'loc-name'>{{loc.locName}}</p>
     <p class = 'loc-temp'>{{temp}}<span class = 'smallf'>°F</span></p>
     <p class = 'loc-desc'>{{weather.desc}}</p>
-</div>
+</a>

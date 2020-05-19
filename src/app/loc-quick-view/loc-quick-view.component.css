@@ -1,0 +1,15 @@
+.mybackground{
+    background-color: white;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 15px;
+    padding:25px;
+    height: 150px;
+    text-decoration: none;
+    color: #2e2e2e;
+}
+
+.loc-name{
+    font-size: 25px;
+    margin:0px;
+}

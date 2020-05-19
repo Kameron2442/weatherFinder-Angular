@@ -11,6 +11,8 @@
     justify-content: center;
     flex-direction: column;
     height: 150px;
+    text-decoration: none;
+    color: #2e2e2e;
 }
 
 .loc-name{
