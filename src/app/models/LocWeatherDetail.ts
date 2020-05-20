@@ -6,5 +6,5 @@ export interface LocWeatherDetail {
     clouds: number;
     windSpeed: number;
     pressure: number;
-    icon: string
+    icon: string;
 }

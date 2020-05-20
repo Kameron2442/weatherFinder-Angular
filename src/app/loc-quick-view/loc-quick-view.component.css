@@ -7,9 +7,30 @@
     height: 150px;
     text-decoration: none;
     color: #2e2e2e;
+    text-align: center;
+    position: relative;
 }
 
 .loc-name{
     font-size: 25px;
     margin:0px;
+    text-align: center;
+}
+
+.w-block{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+
+.exit-out{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    text-decoration: none;
 }

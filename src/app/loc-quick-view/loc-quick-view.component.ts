@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import { GetLocWeatherService } from '../services/get-loc-weather.service';
+import { LocWeatherDetail } from '../models/LocWeatherDetail';
 
 @Component({
   selector: 'app-loc-quick-view',
@@ -11,17 +13,24 @@ export class LocQuickViewComponent implements OnInit {
   name:string;
   lat:number;
   lon:number;
+  myLocWeatherDetail: LocWeatherDetail;
   
 
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute, private weatherService: GetLocWeatherService) { }
 
   ngOnInit(): void {
 
     this.route.queryParams.subscribe(params => {
       this.name = params['name'];
-    });
-    console.log(this.name);
+      this.lat = params['lat'];
+      this.lon = params['lon'];
 
+      this.weatherService.getWeatherDetail(this.lat,this.lon).subscribe(data => {
+        this.myLocWeatherDetail = data;
+      });
+  
+    });
+    
   }
 
 }

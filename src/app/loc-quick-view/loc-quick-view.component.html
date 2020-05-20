@@ -1,4 +1,20 @@
-<div class = 'mybackground'>
+<div class = 'mybackground' *ngIf="myLocWeatherDetail">
+
 <p class = 'loc-name'>{{name}}</p>
-<p class = 'extra'></p>
+
+<div class = 'w-block'>
+<p class = 'extra'>Temperature: {{myLocWeatherDetail.temp | tempConversion}}F</p>
+<p class = 'extra'>Feels like: {{myLocWeatherDetail.feelLike | tempConversion}}F</p>
+<p class = 'extra'>Humidity: {{myLocWeatherDetail.humidity}}</p>
+</div>
+
+<div  class = 'w-block'>
+<p class = 'extra'>Cloud cover: {{myLocWeatherDetail.clouds}}%</p>
+<p class = 'extra'>Wind speed: {{myLocWeatherDetail.windSpeed | speedConversion}}mph</p>
+<p class = 'extra'>Pressure: {{myLocWeatherDetail.pressure}}</p>
+</div>
+
+<a class = 'exit-out' routerLink=''>X</a>
+
+
 </div>

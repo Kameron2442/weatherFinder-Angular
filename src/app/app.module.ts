@@ -10,6 +10,8 @@ import { NewLocComponent } from './new-loc/new-loc.component';
 import { AboutComponent } from './about/about.component';
 import { ErrorComponent } from './error/error.component';
 import { LocQuickViewComponent } from './loc-quick-view/loc-quick-view.component';
+import { TempConversionPipe } from './pipes/temp-conversion.pipe';
+import { SpeedConversionPipe } from './pipes/speed-conversion.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LocQuickViewComponent } from './loc-quick-view/loc-quick-view.component
     NewLocComponent,
     AboutComponent,
     ErrorComponent,
-    LocQuickViewComponent
+    LocQuickViewComponent,
+    TempConversionPipe,
+    SpeedConversionPipe
   ],
   imports: [
     BrowserModule,
