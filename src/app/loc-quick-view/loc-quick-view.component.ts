@@ -13,6 +13,7 @@ export class LocQuickViewComponent implements OnInit {
   name:string;
   lat:number;
   lon:number;
+  forecast:string;
   myLocWeatherDetail: LocWeatherDetail;
   
 
@@ -24,6 +25,7 @@ export class LocQuickViewComponent implements OnInit {
       this.name = params['name'];
       this.lat = params['lat'];
       this.lon = params['lon'];
+      this.forecast = this.name + "+" + this.lat + "+" + this.lon;
 
       this.weatherService.getWeatherDetail(this.lat,this.lon).subscribe(data => {
         this.myLocWeatherDetail = data;

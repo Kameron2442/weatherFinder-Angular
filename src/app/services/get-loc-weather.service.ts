@@ -4,6 +4,7 @@ import { LocWeather } from '../models/LocWeather';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LocWeatherDetail } from '../models/LocWeatherDetail';
+import { LocWeatherForecast } from '../models/LocForecast';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ export class GetLocWeatherService {
 
   getWeatherUrl:string = 'https://api.openweathermap.org/data/2.5/onecall?';
   getWeatherAPIkey:string = '&exclude=hourly,daily&appid=1233faf42e75a019262a8262817b08ce';
+  getWeatherAPIkeyForecast:string = '&exclude=current,minutely,hourly&appid=1233faf42e75a019262a8262817b08ce';
 
   constructor(private http:HttpClient) { }
 
@@ -53,6 +55,34 @@ export class GetLocWeatherService {
       })
     );
   }
+
+    // This function gets the forecast for a location
+    getWeatherForecast(lat:number, lon:number):Observable<LocWeatherForecast>{
+      const lat_s:string = 'lat=' + lat.toString();
+      const lon_s:string = '&lon=' + lon.toString();
+  
+      return this.http.get<LocWeatherForecast>(this.getWeatherUrl + lat_s + lon_s + this.getWeatherAPIkeyForecast).pipe(
+        map((json: any) => {
+            return <LocWeatherForecast> { forecast: [
+                {
+                  temp: json.daily[0].temp.max,
+                  windSpeed: json.daily[0].wind_speed,
+                  desc: json.daily[0].weather[0].description
+                },
+                {
+                  temp: json.daily[1].temp.max,
+                  windSpeed: json.daily[1].wind_speed,
+                  desc: json.daily[1].weather[0].description
+                },
+                {
+                  temp: json.daily[2].temp.max,
+                  windSpeed: json.daily[2].wind_speed,
+                  desc: json.daily[2].weather[0].description
+                },
+            ]}
+        })
+      );
+    }
 
 
 }

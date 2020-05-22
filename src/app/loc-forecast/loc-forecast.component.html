@@ -1,0 +1,38 @@
+<div class = 'mybackground' *ngIf="myForecast">
+
+<p class = 'loc-name'>{{locName}}  3-day forecast</p>
+
+<div class = 'three'>
+
+    <div class = 'forecast-content'>
+        <p class = 'forecast-title'>Today</p>
+        <p class = 'forecast-temp'>{{myForecast.forecast[0].temp | tempConversion}}F</p>
+        <p class = 'forecast-wind'>{{myForecast.forecast[0].windSpeed | speedConversion}}mph</p>
+        <p class = 'forecast-desc'>{{myForecast.forecast[0].desc}}</p>
+    </div>
+
+</div>
+
+<div class = 'three'>
+
+    <div class = 'forecast-content'>
+        <p class = 'forecast-title'>Tomorrow</p>
+        <p class = 'forecast-temp'>{{myForecast.forecast[1].temp | tempConversion}}F</p>
+        <p class = 'forecast-wind'>{{myForecast.forecast[1].windSpeed | speedConversion}}mph</p>
+        <p class = 'forecast-desc'>{{myForecast.forecast[1].desc}}</p>
+    </div>
+
+</div>
+
+<div class = 'three'>
+
+    <div class = 'forecast-content'>
+        <p class = 'forecast-title'>The Day After</p>
+        <p class = 'forecast-temp'>{{myForecast.forecast[2].temp | tempConversion}}F</p>
+        <p class = 'forecast-wind'>{{myForecast.forecast[2].windSpeed | speedConversion}}mph</p>
+        <p class = 'forecast-desc'>{{myForecast.forecast[2].desc}}</p>
+    </div>
+
+</div>
+
+</div>

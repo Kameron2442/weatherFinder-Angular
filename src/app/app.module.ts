@@ -12,6 +12,7 @@ import { ErrorComponent } from './error/error.component';
 import { LocQuickViewComponent } from './loc-quick-view/loc-quick-view.component';
 import { TempConversionPipe } from './pipes/temp-conversion.pipe';
 import { SpeedConversionPipe } from './pipes/speed-conversion.pipe';
+import { LocForecastComponent } from './loc-forecast/loc-forecast.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SpeedConversionPipe } from './pipes/speed-conversion.pipe';
     ErrorComponent,
     LocQuickViewComponent,
     TempConversionPipe,
-    SpeedConversionPipe
+    SpeedConversionPipe,
+    LocForecastComponent
   ],
   imports: [
     BrowserModule,

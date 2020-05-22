@@ -1,0 +1,30 @@
+.mybackground{
+    background-color: white;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-top: 15px;
+    padding:25px;
+    text-decoration: none;
+    color: #2e2e2e;
+    text-align: center;
+    position: relative;
+    height: 280px;
+}
+
+.loc-name{
+    font-size: 25px;
+    margin:0px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.three{
+    width: 33.33%;
+    height: 200px;
+    display: inline-block;
+    float: left;
+}
+
+.forecast-title{
+    font-size: 20px;
+}

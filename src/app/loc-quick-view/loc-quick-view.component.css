@@ -4,7 +4,7 @@
     border-radius: 20px;
     margin-top: 15px;
     padding:25px;
-    height: 150px;
+    height: 200px;
     text-decoration: none;
     color: #2e2e2e;
     text-align: center;
@@ -33,4 +33,19 @@
     line-height: 30px;
     font-weight: 700;
     text-decoration: none;
+}
+
+.blue-btn{
+    background-color: #3F51B5;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
 }

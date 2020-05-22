@@ -4,6 +4,7 @@ import { MylocsComponent } from '../app/mylocs/mylocs.component';
 import { AboutComponent } from '../app/about/about.component';
 import { ErrorComponent } from '../app/error/error.component';
 import { LocQuickViewComponent } from '../app/loc-quick-view/loc-quick-view.component';
+import { LocForecastComponent } from '../app/loc-forecast/loc-forecast.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
     ]
   },
   { path: 'about', component: AboutComponent },
+  { path: 'forecast/:loc', component: LocForecastComponent},
   { path: '**', component: ErrorComponent },
   
 ];
