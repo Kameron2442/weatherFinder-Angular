@@ -14,7 +14,7 @@ export class GetNewLocService {
 
   constructor(private http:HttpClient) { }
 
-  // This function is used by loc-item components to get the weather for themselves
+  // This function is used by component new-loc to get three relevent locations from what the user searched for
   getLocs(searchName: string):Observable<Loc[]>{
     const searchNameFix:string = searchName.split(' ').join('+');
 

@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-
 //converts K to F temperature
 @Pipe({
   name: 'tempConversion'

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Loc } from '../models/Loc';
+import { SavedLocsService } from '../services/saved-locs.service'
 
 @Component({
   selector: 'app-mylocs',
@@ -10,7 +11,7 @@ export class MylocsComponent implements OnInit {
 
   mylocs:Loc[]; //array that holds locations
 
-  constructor() { }
+  constructor( private data: SavedLocsService ) { }
 
   ngOnInit(): void {
 
@@ -33,11 +34,14 @@ export class MylocsComponent implements OnInit {
       },
     ]
 
+    this.data.changeLocs(this.mylocs);
+    this.data.currentSavedLocations.subscribe(message => this.mylocs = message);
 
   }
 
+  // gets triggered when a new-loc component emits a location to be added as a saved location
   receiveLocation($event){
-    this.mylocs.push($event);
+    this.data.appendLoc($event);
   }
 
 }
