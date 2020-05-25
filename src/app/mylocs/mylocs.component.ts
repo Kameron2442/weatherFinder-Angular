@@ -15,26 +15,7 @@ export class MylocsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // Default locations
-    this.mylocs = [
-      {
-        locName: "Raleigh NC",
-        lat: 35.77,
-        lon: -78.63
-      },
-      {
-        locName: "New York City",
-        lat: 40.71,
-        lon: -74.00
-      },
-      {
-        locName: "Paris France",
-        lat: 48.85,
-        lon: 2.35
-      },
-    ]
-
-    this.data.changeLocs(this.mylocs);
+    // gets the saved locations to make the loc-items 
     this.data.currentSavedLocations.subscribe(message => this.mylocs = message);
 
   }

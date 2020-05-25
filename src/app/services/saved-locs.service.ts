@@ -8,7 +8,24 @@ import { Loc } from '../models/Loc';
 })
 export class SavedLocsService {
 
-  private savedLocations = new BehaviorSubject<Loc[]>([]); // holds user's saved locations
+  // default saved user locations
+  private savedLocations = new BehaviorSubject<Loc[]>([
+    {
+      locName: "Raleigh NC",
+      lat: 35.77,
+      lon: -78.63
+    },
+    {
+      locName: "New York City",
+      lat: 40.71,
+      lon: -74.00
+    },
+    {
+      locName: "Paris France",
+      lat: 48.85,
+      lon: 2.35
+    }
+  ]); 
   currentSavedLocations = this.savedLocations.asObservable(); // obervable used by components
 
   constructor() { }
