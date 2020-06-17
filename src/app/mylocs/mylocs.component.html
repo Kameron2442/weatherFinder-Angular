@@ -2,12 +2,15 @@
 <app-new-loc (addLoc) = 'receiveLocation($event)' ></app-new-loc>
 
 
-<h1>Your saved Locations</h1>
+<h1 class = 'less-margin-top'>Your saved Locations</h1>
+<p class = 'extra'>Backend is using free Azure app hosting so sometimes the locations will take a few seconds to load up</p>
+
 <div class = 'neg-margin'>
     <div class = 'item-holder' *ngFor="let loc of mylocs; index as i">
         <app-loc-item [loc] = 'loc' [thisIndex] = 'i'></app-loc-item>
     </div>
 </div>
+
 
 <router-outlet></router-outlet>
 

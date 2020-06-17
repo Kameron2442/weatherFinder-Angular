@@ -16,51 +16,31 @@ const httpOptions = {
 })
 export class SavedLocsService {
 
-  weatherFinderAPI = 'https://weatherfinderapi.azurewebsites.net/api/LocationItems';
 
 
-  // default saved user locations
-  private savedLocations = new BehaviorSubject<Loc[]>([
-    // {
-    //   locName: "Raleigh NC",
-    //   lat: 35.77,
-    //   lon: -78.63
-    // },
-    // {
-    //   locName: "New York City",
-    //   lat: 40.71,
-    //   lon: -74.00
-    // },
-    // {
-    //   locName: "Paris France",
-    //   lat: 48.85,
-    //   lon: 2.35
-    // }
-  ]); 
-
-
-  
+  private savedLocations = new BehaviorSubject<Loc[]>([]);   // saved user locations
   currentSavedLocations = this.savedLocations.asObservable(); // obervable used by components
+  weatherFinderAPI = 'https://weatherfinderapi.azurewebsites.net/api/LocationItems'; // Link to .NET REST backend
+
 
   constructor(private http:HttpClient) { 
+
+    // this gets all the saved locations in the db and appends them to savedLocations
     this.getSavedLocs().subscribe(savedLocs => {
-      console.log(savedLocs);
       let mylocs:Loc[] = savedLocs;
       mylocs.forEach(item =>{
         this.appendLoc(item);
       })
     });
+
   }
 
-  changeLocs(locs: Loc[]){
-    this.savedLocations.next(locs);
-  }
-
-  // appends a new saved location
+  // appends a new location to savedLocations
   appendLoc(newLoc: Loc){
     this.savedLocations.next(this.savedLocations.getValue().concat([newLoc]));
   }
 
+  // sends a new location to db
   sendLoc(newLoc: Loc){
     this.http.post(this.weatherFinderAPI, newLoc, httpOptions).subscribe(
       data => console.log('success', data),
@@ -79,6 +59,7 @@ export class SavedLocsService {
     );
   }
 
+  // gets all the saved locations from db
   getSavedLocs():Observable<Loc[]>{
 
     return this.http.get<Loc[]>(this.weatherFinderAPI).pipe(

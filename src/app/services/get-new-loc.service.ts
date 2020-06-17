@@ -9,12 +9,13 @@ import { Loc } from '../models/Loc';
 })
 export class GetNewLocService {
 
-  getNewLocURL = 'http://api.geonames.org/postalCodeSearchJSON?placename=';
+  getNewLocURL = 'https://secure.geonames.org/postalCodeSearchJSON?placename=';
   getNewLocAPIkey = '&maxRows=3&username=kameron2332';
 
   constructor(private http:HttpClient) { }
 
-  getRandomInt(max) {
+  // this is used to create a random id for the Loc in the db. Will remove this with auto increment IDs later.
+  getRandomInt(max):number {
     return Math.floor(Math.random() * Math.floor(max));
   }
 

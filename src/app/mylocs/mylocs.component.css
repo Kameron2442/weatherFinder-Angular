@@ -7,3 +7,14 @@
     margin-left: -10px;
     margin-right: -10px;
 }
+
+.extra{
+    color: #8aa3ff;
+    font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+}
+
+.less-margin-top{
+    margin-bottom: 5px;
+}
