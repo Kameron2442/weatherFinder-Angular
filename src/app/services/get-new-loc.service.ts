@@ -14,6 +14,10 @@ export class GetNewLocService {
 
   constructor(private http:HttpClient) { }
 
+  getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
   // This function is used by component new-loc to get three relevent locations from what the user searched for
   getLocs(searchName: string):Observable<Loc[]>{
     const searchNameFix:string = searchName.split(' ').join('+');
@@ -24,6 +28,7 @@ export class GetNewLocService {
         let myLocs: any[] = json.postalCodes;
         myLocs.forEach(item => {
           let currLoc: Loc = {
+            id: this.getRandomInt(10000000),
             locName: item.placeName,
             lat: item.lat,
             lon: item.lng

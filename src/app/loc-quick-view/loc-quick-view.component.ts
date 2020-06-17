@@ -12,6 +12,7 @@ import { SavedLocsService } from '../services/saved-locs.service'
 })
 export class LocQuickViewComponent implements OnInit {
 
+  locID:number; // Id of location in DB
   name:string; // name of location
   lat:number; // lat of location
   lon:number; // lon of location
@@ -30,6 +31,7 @@ export class LocQuickViewComponent implements OnInit {
       this.lat = params['lat'];
       this.lon = params['lon'];
       this.index = params['index'];
+      this.locID = params['locID'];
       this.forecast = this.name + "+" + this.lat + "+" + this.lon;
 
       // gets the location's extra weather details
@@ -44,7 +46,7 @@ export class LocQuickViewComponent implements OnInit {
   // deletes the location from the user's saved locations
   deleteLoc(){
     console.log("deleting at index: ", this.index);
-    this.data.removeLoc(this.index);
+    this.data.removeLoc(this.index, this.locID);
   }
 
 }

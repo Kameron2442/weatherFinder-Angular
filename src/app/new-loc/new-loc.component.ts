@@ -26,7 +26,7 @@ export class NewLocComponent implements OnInit {
     });
   }
 
-  // this outputs the clicked location to the mylocs component where is is then added to the user's saved locations
+  // this outputs the clicked location to the mylocs component where it is then added to the user's saved locations
   sendLoc(index: number){
     this.addLoc.emit(this.searchedLocs[index]);
     this.searchedLocs = [];

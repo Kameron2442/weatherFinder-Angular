@@ -23,6 +23,7 @@ export class MylocsComponent implements OnInit {
   // gets triggered when a new-loc component emits a location to be added as a saved location
   receiveLocation($event){
     this.data.appendLoc($event);
+    this.data.sendLoc($event);
   }
 
 }
